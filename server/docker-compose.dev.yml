@@ -1,0 +1,43 @@
+version: "3"
+services: 
+  server: 
+    build: 
+      context: .
+      args: 
+        NODE_ENV: development
+    volumes: 
+      - ./:/app:ro 
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+      - DEV_DB_ROOT_USER=root
+      - DEV_DB_USERNAME=user
+      - DEV_DB_PASSWORD=password
+      - DEV_DB_ROOT_PASSWORD=password
+      - DEV_DB_DATABASE=studyweb_db
+      - DEV_DB_HOST=mysql
+      - SECRET_JWT=secretjwt
+      - SECRET_EMAIL=secretemail
+    depends_on:
+      - mysql
+    command: npm run dev
+    networks:
+      - docker_net
+    ports: 
+      - "3000:3000"
+  mysql: 
+    image: mysql:5.7.24
+    environment:
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=studyweb_db
+    networks:
+      - docker_net
+    volumes:
+      - mysql-volume:/var/lib/mysql
+networks:
+  docker_net: {}
+volumes: 
+  mysql-volume:

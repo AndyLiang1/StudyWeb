@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }
+
+
+.folder_container{
+    height: 15rem;
+    width: 22rem;
+    background: white;
+    border-radius: 1rem;
+}
+
+.folder_title {
+    height: 35%;
+    background: var(--lightgrey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 1rem 1rem 0rem 0rem;
+
+    font-size: 3rem;
+}
+
+.folder_numSets {
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

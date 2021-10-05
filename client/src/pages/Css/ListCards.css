@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }
+
+.list_cards_page {
+    height: 100vh;
+    width: 100vw;
+    background: var(--verylightgrey)
+}
+
+.list_cards_page_content {
+    height: 90vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    grid-template-rows: 1fr 9fr;
+    grid-template-areas: 
+    "title card_CRUD"
+    "card_section card_CRUD"
+    ;
+}
+
+.list_cards_timer_container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+}
+.list_cards_title_container {
+    grid-area: title;
+    margin-top: 1rem;
+
+    flex-direction: column;
+    display: flex;
+}
+
+.list_cards_set_title { 
+
+    font-size: 3rem;
+    font-weight: 500;
+    padding-left: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.list_cards_timer {
+    
+    font-size: 2rem;
+    padding-left: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.list_cards_card_section{
+    height: 100%;
+    width: 100%;
+    grid-area: card_section;
+
+    flex-direction: column;
+    display: flex;
+    margin-left: 5rem;
+}
+
+.list_cards_card_container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+}
+
+.list_cards_card {
+    height: 100%;
+    width: 100%;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 2rem;
+}
+
+.list_cards_card_front, .list_cards_card_back {
+    height: 100%;
+    width: 100%;
+    box-shadow: 0.3rem 0.3rem 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    font-size: 2.5rem;
+
+    border-radius: 2rem;
+    background: white;
+    padding: 0.1rem;
+}
+.list_cards_card_front {
+    background: rgb(168, 230, 255);
+}
+
+.list_cards_card_front:hover, .list_cards_card_back:hover {
+    cursor: pointer;
+}
+
+.list_cards_change_card {
+    height: 10%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    margin-bottom: 3rem;
+}
+
+.list_cards_display_index {
+    height: 100%;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list_cards_arrow_btn {
+    height: 80%;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.list_cards_card_CRUD {
+    grid-area: card_CRUD;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.list_cards_add_btn, .list_cards_edit_btn, .list_cards_delete_btn {
+    width:20%;
+    height:20%;
+    color: var(--grey)
+}
+
+.list_cards_add_btn:hover, .list_cards_edit_btn:hover, 
+.list_cards_delete_btn:hover, .list_cards_arrow_btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.list_cards_pauseplay_refresh_close_btn {
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-left: 2rem;
+}
+
+.list_cards_pauseplay_refresh_close_btn:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* ========================================================================== */
+/* Different dimensions */
+/* ========================================================================== */
+@media (max-width: 1920px) {
+    .list_cards_set_title {
+        font-size: 5rem;
+    }
+
+    .list_cards_timer {
+        font-size: 3rem;
+    }
+
+    .list_cards_card_front, .list_cards_card_back {
+        font-size: 3.5rem;
+    }
+
+    .list_cards_display_index {
+        font-size: 3rem;
+    }
+
+    .list_cards_pauseplay_refresh_close_btn {
+        font-size: 2.9rem;
+    }
+  }
+@media (max-width: 1537px) {
+    .list_cards_set_title {
+        font-size: 4.8rem;
+    }
+
+    .list_cards_timer {
+        font-size: 2.8rem;
+    }
+
+    .list_cards_card_front, .list_cards_card_back {
+        font-size: 3rem;
+    }
+
+    .list_cards_display_index {
+        font-size: 2.5rem;
+    }
+
+    .list_cards_pauseplay_refresh_close_btn {
+        font-size: 2.7rem;
+    }
+  }
+@media (max-width: 1367px) {
+    .list_cards_set_title {
+        font-size: 4.5rem;
+    }
+
+    .list_cards_timer {
+        font-size: 2.5rem;
+    }
+
+    .list_cards_card_front, .list_cards_card_back {
+        font-size: 2.9rem;
+    }
+
+    .list_cards_display_index {
+        font-size: 2.5rem;
+    }
+
+    .list_cards_pauseplay_refresh_close_btn {
+        font-size: 2.4rem;
+    }
+  }
+
+@media (max-width: 700px) {
+    .list_cards_page_content {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 8fr;
+        grid-template-areas: 
+        "title"
+        "card_CRUD"
+        "card_section"
+        ;
+    }
+    
+    .list_cards_card_CRUD {
+        flex-direction: row;
+    }
+
+    .list_cards_card {
+        padding-bottom: 2rem;
+    }
+
+    .list_cards_add_btn, .list_cards_edit_btn, .list_cards_delete_btn {
+        width:30%;
+        height:30%;
+        color: var(--grey)
+    }
+
+    .list_cards_card_section {
+        margin-left: 0rem;
+    }
+
+    .list_cards_set_title {
+        font-size: 4.5rem;
+    }
+
+    .list_cards_timer {
+        font-size: 2.5rem;
+    }
+
+    .list_cards_card_front, .list_cards_card_back {
+        font-size: 2.2rem;
+    }
+
+    .list_cards_display_index {
+        font-size: 2rem;
+    }
+
+    .list_cards_pauseplay_refresh_close_btn {
+        height: 2.4rem;
+        width: 2.4rem;
+    }
+}
+
+@media (max-width: 415px) {
+    .list_cards_timer {
+        font-size: 1.8rem;
+    }
+
+    .list_cards_pauseplay_refresh_close_btn {
+        height: 1.8rem;
+        width: 1.8rem;
+    }
+}
+
+@media (max-width: 376px) {
+    .list_cards_set_title {
+        font-size: 4rem;
+    }
+
+    .list_cards_card_front, .list_cards_card_back {
+        font-size: 2rem;
+    }
+
+    .list_cards_display_index {
+        font-size: 1.7rem;
+    }
+
+    .list_cards_timer {
+        font-size: 1.7rem;
+    }
+
+    .list_cards_pauseplay_refresh_close_btn {
+        height: 1.7rem;
+        width: 1.7rem;    
+        margin-left: 1.5rem;
+    }
+  }
+
+@media (max-width: 361px) {
+    .list_cards_set_title {
+        font-size: 3.5rem;
+    }
+
+    .list_cards_card_front, .list_cards_card_back {
+        font-size: 2rem;
+    }
+
+    .list_cards_display_index {
+        font-size: 1.7rem;
+    }
+
+    .list_cards_timer {
+        font-size: 1.8rem;
+    }
+
+    .list_cards_pauseplay_refresh_close_btn {
+        height: 1.7rem;
+        width: 1.7rem;    
+        margin-left: 1rem;
+    }
+  }
+
+  

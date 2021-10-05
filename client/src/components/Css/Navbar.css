@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }
+
+.navbar {
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--grey);
+    color: white;
+    padding-right: 2rem;
+}
+
+.brand_title {
+    height: 100%;
+    width: 21rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+}
+
+.navbar_links {
+    height: 100%;
+    width: calc(100% - 21rem);
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar_links ul {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar_links li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.navbar_links li a {
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.navbar_links li:hover, .nav_logout:hover{
+    background-color: #555;
+    cursor: pointer;
+}
+
+.nav_folder_and_sets {
+    height: 100%;
+    width: 20rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin-right: auto;
+}
+.nav_logout_container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.nav_logout {
+    height: 100%;
+    margin-left: auto;
+}
+
+.navbar_links_V {
+    display: none;
+    z-index: 2;
+}
+
+/* ========================================================================== */
+/* Common attributes like font size  */
+/* ========================================================================== */
+.brand_title {
+    font-size: 3rem;
+}
+
+.navbar_links li a {
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.navbar_links_V li a {
+    font-size: 1.3rem;
+    padding: 1rem 0.5rem;
+}
+
+.brand_title_C {
+    display: none; 
+ }
+@media(max-width: 600px){
+    /* ========================================================================== */
+    /* toggle button */
+    /* ========================================================================== */
+    .toggle_wrapper{
+        height: 100%;
+        width: calc(100% - 21rem);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center; 
+        padding-right: 2rem;
+    }
+    .toggle_button {
+        display: flex;
+
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        
+        margin-left: auto;
+    }
+
+    .toggle_button .bar {
+        height: 0.3rem;
+        width: 100%;
+        background-color: white;
+        border-radius: 1rem;
+    }
+
+    .brand_title {
+        display: none; 
+    }
+    .brand_title_C {
+        display: flex;
+        font-size: 3rem;
+        margin-left: 3rem;
+    }
+
+    .navbar {
+        padding-right: 0rem;
+    }
+    
+    .navbar_links {
+        display: none;
+    }
+
+    .navbar_links_V {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        background-color: #333;
+    }
+
+    .navbar_links_V ul {
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar_links_V li {
+        width: 100%;
+
+        list-style: none;
+        text-align: center;
+
+    }
+
+    .navbar_links_V li a {
+        text-decoration: none;
+        color: white;
+        padding: 0.5rem 1rem;
+        display: block;
+    }
+
+    .navbar_links_V li:hover{
+        background-color: #555;
+    }    
+}
+
+/* ========================================================================== */
+/* Different dimensions */
+/* ========================================================================== */
+@media (max-width: 1920px) {
+    .brand_title {
+        padding-left: 0;
+        width: 30rem;
+    }
+
+    .navbar_links {
+        width: calc(100% - 30rem);
+    }
+
+    .brand_title {
+        font-size: 3.5rem;
+    }
+    
+    .navbar_links li a {
+        font-size: 2.8rem;
+    }
+  }
+
+  @media (max-width: 1536px) {
+    .brand_title {
+        width: 25rem;
+    }
+
+    .navbar_links {
+        width: calc(100% - 25rem);
+    }
+
+    .brand_title {
+        font-size: 3rem;
+    }
+    
+    .navbar_links li a {
+        font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 1366px) {
+    .brand_title {
+        width: 27rem;
+    }
+
+    .navbar_links {
+        width: calc(100% - 27rem);
+    }
+
+    .brand_title {
+        font-size: 3rem;
+    }
+    
+    .navbar_links li a {
+        font-size: 2.3rem;
+    }
+  }
+  @media (max-width: 1285px) {
+    .brand_title {
+        width: 23rem;
+    }
+
+    .navbar_links {
+        width: calc(100% - 23rem);
+    }
+
+    .brand_title {
+        font-size: 2.5rem;
+    }
+    
+    .navbar_links li a {
+        font-size: 1.7rem;
+    }
+  }
+
+  @media (max-width: 415px) {
+    .brand_title {
+        width: 80%;
+    }
+    .toggle_wrapper {
+        width: 20%;
+    }
+  }

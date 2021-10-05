@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }
+
+.profile_container {
+    height: 100%;
+    width: 100%;
+    background:var(--verylightgrey);
+    padding-left: 5rem;
+    position: relative;
+}
+
+.profile_pic_and_info {
+    display: flex;
+    justify-content: left;
+    padding-top: 1rem;
+    height: 80%;
+}
+
+.profile_name {
+    font-size: 3.5rem;
+}
+
+.profile_pic{
+    height: 9rem;
+    width: 9rem;
+    background: var(--lightgrey);
+    border-radius: 50%;
+    display: inline-block;
+    padding-right: 3rem;
+    position: relative;
+}
+
+.profile_icon {
+    height: 90%;
+    width: 90%;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);    
+    position: absolute;
+
+    color: black;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    
+
+}
+.num_folders_and_num_sets {
+    width: 100%;
+}
+
+.profile_timer_container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+.profile_info {
+    padding-left: 3rem;
+    width: 50%;
+}
+.count {
+    font-size: 1.5rem;
+}
+
+.folder_sets_options_container {
+    margin-top: 1rem;
+}
+
+.folders_link, .sets_link{
+    padding-right: 5rem;
+    text-decoration: none;
+    font-size: 2rem;
+    color: black;
+}
+.folders_link:hover, .sets_link:hover{
+    cursor: pointer;
+}
+
+.profile_pauseplay_refresh_close_btn {
+    margin-left: 1rem;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.profile_pauseplay_refresh_close_btn:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+@media (max-width: 414px) {
+    .profile_container {
+        padding-left: 3rem;
+    }
+    .profile_info {
+        width: 80%;
+    }
+    .profile_name {
+        font-size: 3rem;
+    }
+
+    .count {
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 376px) {
+    .profile_container {
+        padding-left: 3rem;
+    }
+    .profile_info {
+        width: 80%;
+        padding-left: 1.5rem;
+    }
+    .profile_name {
+        font-size: 3rem;
+    }
+
+    .count {
+        font-size: 1.3rem;
+    }
+
+    .profile_pauseplay_refresh_close_btn {
+        margin-left: 0.7rem;
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+}
+
+@media (max-width: 361px) {
+    .profile_info {
+        width: 80%;
+        padding-left: 1.3rem;
+    }
+
+    .count {
+        font-size: 1.3rem;
+    }
+
+    .profile_pauseplay_refresh_close_btn {
+        margin-left: 0.7rem;
+        height: 1.3rem;
+        width: 1.3rem;
+    }
+}

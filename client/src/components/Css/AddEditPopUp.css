@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }
+
+.add_container, .edit_container {
+    height: 100%; 
+    width: 100%;
+    background: white;
+    border-radius: 0.5rem;
+
+    /* border: 0.1rem solid black; */
+}
+
+.add_form, .edit_form {
+    height: 100%;
+    width: 100%;
+}
+/* ========================================================================== */
+/* Title bar */
+/* ========================================================================== */
+.add_title_container, .edit_title_container {
+    height: 30%;
+    width: 100%;
+    background: var(--grey);
+    color: white;
+    padding: 1rem;
+    padding-right: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border-radius: 0.5rem 0.5rem 0rem 0rem;
+
+}
+.add_close_btn, .edit_close_btn {
+    transform: scale(3);
+    color: white;
+}
+
+.add_close_btn:hover, .edit_close_btn:hover {
+    transform: scale(3.5);
+    cursor: pointer;
+}
+
+/* ========================================================================== */
+/* Content part */
+/* ========================================================================== */
+.add_content_container, .edit_content_container {
+    height: 70%;
+    width: 100%;
+    padding: 1rem;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.add_details, .edit_details {
+    width: 100%;
+}
+
+.add_label, .edit_label {
+    font-weight: 400;
+    padding-bottom: 1rem;
+}
+
+.add_field, .edit_field {
+    width: 100%;
+    margin-bottom: 1rem;
+    border: 0.1rem black solid;
+}
+
+.add_field_errors, .edit_field_errors {
+    color: red;
+}
+
+.add_button, .edit_button {
+    /* to get rid of the default button look */
+    padding: 0;
+    border: none;
+    background: none;
+
+    margin-top: 1rem;
+    height: 4rem;
+    width: 100%;
+
+    background-color: lightblue;
+}
+
+.add_button:hover, .edit_button:hover {
+    cursor: pointer
+}
+
+/* ========================================================================== */
+/* Common attributes like font-size */
+/* ========================================================================== */
+.add_label, .add_button, .edit_label, .edit_button  {
+    font-size: 1.5rem;
+}
+
+
+.add_button, .edit_button {
+    border-radius: 0.1rem;
+}
+
+
+.add_field, .edit_field {
+    font-size: 2rem;
+    height: 3.5rem;
+}

@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+
+:root {
+  --grey: rgba(59, 59, 59);
+  --lightgrey: rgb(189, 189, 189);
+  --verylightgrey: rgb(246, 246, 246);
+}
+

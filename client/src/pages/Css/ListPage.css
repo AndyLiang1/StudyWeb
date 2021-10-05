@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.list_page {
+  width: 100vw;
+  position: relative;
+  background: white;
+}
+
+.description {
+  padding-left: 3rem;
+  margin-top: 1rem;
+  font-size: 2rem;
+  height: 5%;
+}
+
+.profile_section_container {
+  height: 22%;
+  width: 100%;
+}
+/* ========================================================================== */
+/* List of sets  */
+/* ========================================================================== */
+.list_page_content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;   
+}
+
+.one_item, .add_item{
+  height: 8rem;
+  min-height: 8rem;
+  width: 60%;
+  background: white;
+  margin-left: 3rem;
+  margin-bottom: 1.5rem;
+
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  
+
+  padding-left: 3rem;
+
+  border: 0.2rem solid black;
+  position: relative;
+}
+
+.add_item {
+  background: rgb(215, 245, 255);
+}
+
+.add_item:hover {
+  transform: scale(1.03);
+}
+.plus_btn {
+  height: 7rem;
+  width: 7rem;
+  /* height: 100%;
+  width: 100%; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+
+  color: var(--grey)
+}
+
+.one_item:hover {
+  background: var(--lightgrey);
+  cursor: pointer;
+}
+.one_item_title_container {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+}
+
+.one_item_folderImg_container {
+  /* height: 100%;
+  width: 5%;;  */
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.one_item_folderIcon {
+  height: 3.7rem;
+  width: 3.7rem;
+}
+
+.one_item_name {
+  font-size: 3rem;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  padding-left: 1rem;
+}
+
+.one_item_numChild {
+  height: 40%;
+  width: 100%;
+  font-size: 1.5rem;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.one_item_btn_container {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+
+  position: absolute;
+  right: 2rem;
+}
+
+.one_item_edit_btn, .one_item_delete_btn {
+  height: 2rem;
+  width: 2rem;
+  margin-left: 1rem;
+}
+.one_item_edit_btn:hover, .one_item_delete_btn:hover {
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+.list_page_edit_container, .list_page_delete_container {
+  height: 25rem;
+  width: 50rem;
+  position: fixed;
+  /* margin-top: 5%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  z-index: 3; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.list_page_add_container {
+  height: 35rem;
+  width: 50rem;
+  position: fixed;
+  /* margin-top: 5%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  z-index: 3; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.list_page_edit_CARD_container {
+  height: 35rem;
+  width: 50rem;
+  position: fixed;
+  /* margin-top: 5%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  z-index: 3; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 500px) {
+  .list_page_edit_container, .list_page_delete_container, .list_page_add_container {
+    height: 30rem;
+    width: 35rem;
+    position: fixed;
+    /* margin-top: 5%;
+    margin-left: 50%; */
+  
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+}
+/* ========================================================================== */
+/* Different dimensions */
+/* ========================================================================== */
+@media (max-width: 415px) {
+  .one_item, .add_item {
+    width: 85%;
+    height: 7.5rem;
+    min-height: 7.5rem;
+  }
+
+  .profile_container {
+    padding-left: 3rem;
+  }
+}
+
+@media (max-width: 376px) {
+  .one_item, .add_item {
+    width: 85%;
+    height: 7rem;
+    min-height: 7rem;
+  }
+}
+
+@media (max-width: 361px) {
+  .one_item, .add_item {
+    width: 85%;
+    height: 8.5rem;
+    min-height: 8.5rem;
+  }
+}

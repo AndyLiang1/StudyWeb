@@ -1,0 +1,596 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }
+
+.user_container{
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+.user_content_container {
+  height: 90%;
+  width: 100%;
+  /* position: relative; */
+  background-color: lightskyblue;
+}
+
+.create_container {
+  width: 100%;
+  height: 33%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.create_folder, .create_set, .timer {
+  height: 70%;
+  width: 25%;
+  position: relative;
+}
+
+.create_folder:hover, .create_set:hover, .timer:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.plus_btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.icons {
+  height: 100%;
+  width: 100%;
+  color: grey;
+}
+
+.time_remaining_container {
+  height: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.time_remaining_text {
+  font-size: 2.1rem;
+}
+
+.user_pauseplay_refresh_close_btn {
+  height: 2rem;
+  width: 2rem;
+  margin-left: 2rem;
+}
+
+.user_pauseplay_refresh_close_btn:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.timer_option_err {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: red;
+
+}
+/* ========================================================================== */
+/* Folder List */
+/* ========================================================================== */
+
+.folders_container {
+  height: 31%;
+  width: 100%;
+
+  flex-direction: column;
+  display: flex;
+  overflow-y: auto;
+}
+
+.folders_title_viewAll {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.viewAll {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.viewAll:hover {
+  cursor: pointer;
+}
+
+.user_list_of_folders, .user_list_of_sets {
+  height: 78%;
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.user_one_item {
+  height: 7rem;
+  min-height: 7rem;
+  width: 20rem;
+  background: white;
+  margin-left: 3rem;
+  margin-bottom: 1.5rem;
+
+  flex-direction: column;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+
+  padding-left: 1rem;
+
+  border: 0.2rem solid black;
+  position: relative;
+}
+
+.user_one_item:hover {
+  background: var(--lightgrey);
+  cursor: pointer;
+}
+.user_one_item_title_container {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+}
+
+.user_one_item_folderImg_container {
+  /* height: 100%;
+  width: 5%;;  */
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.user_one_item_folderIcon {
+  height: 3rem;
+  width: 3rem;
+}
+
+.user_one_item_name {
+  font-weight: 600;
+  font-size: 1.5rem;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  padding-left: 1rem;
+}
+
+.user_one_item_numChild {
+  height: 40%;
+  width: 100%;
+  font-size: 1.5rem;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+/* ========================================================================== */
+/* Set List */
+/* ========================================================================== */
+.sets_container {
+  height: 31%;
+  width: 100%;
+
+  flex-direction: column;
+  display: flex;
+  overflow-y: auto;
+}
+.sets_title_viewAll {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding-left: 3rem;
+  padding-right: 3rem;}
+
+.viewAll {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.viewAll:hover {
+  cursor: pointer;
+}
+
+.user_list_of_sets {
+  /* in above section*/
+  display: flex;
+}
+
+/* ========================================================================== */
+/* Popups */
+/* ========================================================================== */
+.add_folder_pop_up {
+  height: 25rem;
+  width: 50rem;
+  position: fixed;
+  /* margin-top: 5%;
+  margin-left: 50%; */
+
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.add_set_pop_up {
+  height: 35rem;
+  width: 50rem;
+  position: fixed;
+  /* margin-top: 5%;
+  margin-left: 50%; */
+
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.timer_pop_up {
+  height: 50rem;
+  width: 50rem;
+  position: fixed;
+  /* margin-top: 5%;
+  margin-left: 50%; */
+
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.custom_timer_pop_up {
+  height: 35rem;
+  width: 50rem;
+  position: fixed;
+  /* margin-top: 5%;
+  margin-left: 50%;
+  transform: translateX(-50%); */
+  z-index: 3; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ========================================================================== */
+/* Different dimensions */
+/* ========================================================================== */
+@media (max-width: 1920px) {
+  .user_one_item {
+    height: 10rem;
+    min-height: 10rem;
+    width: 34rem
+  }
+
+  .user_one_item_folderIcon {
+    height: 4.5rem;
+    width: 4.5rem;
+  }
+
+  .user_one_item_name {
+    font-weight: 600;
+    font-size: 2.5rem;
+    padding-left: 1rem;
+  }
+  
+  .user_one_item_numChild {
+    font-size: 2.25rem;
+  }
+
+  .time_remaining_text {
+    font-size: 3rem;
+  }
+
+  .user_pauseplay_refresh_close_btn {
+    height: 3rem;
+    width: 3rem;
+  }
+}
+
+@media (max-width: 1537px) {
+  .plus_btn {
+    padding-bottom: 0.5rem;
+  }
+
+  .user_one_item {
+    height: 7.4rem;
+    min-height: 7.4rem;
+    width: 27rem
+  }
+
+  .user_one_item_folderIcon {
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .user_one_item_name {
+    font-weight: 600;
+    font-size: 2rem;
+    padding-left: 1rem;
+  }
+  
+  .user_one_item_numChild {
+    font-size: 1.5rem;
+  }
+
+  .time_remaining_text {
+    font-size: 2.3rem;
+  }
+
+  .user_pauseplay_refresh_close_btn {
+    height: 2.2rem;
+    width: 2.2rem;
+  }
+}
+
+@media (max-width: 1367px) {
+  .user_one_item {
+    height: 7.5rem;
+    min-height: 7.5rem;
+    width: 23rem;
+  }
+
+  .user_one_item_folderIcon {
+    height: 3.25rem;
+    width: 3.25rem;
+  }
+
+  .user_one_item_name {
+    font-weight: 500;
+    font-size: 2rem;
+    padding-left: 1rem;
+  }
+  
+  .user_one_item_numChild {
+    font-size: 1.75rem;
+  }
+}
+@media (max-width: 1285px) {
+  .user_one_item {
+    height: 5.5rem;
+    min-height: 5.5rem;
+    width: 21rem;
+  }
+
+  .user_one_item_folderIcon {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .user_one_item_name {
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+  }
+  
+  .user_one_item_numChild {
+    font-size: 1.3rem;
+  }
+
+}
+@media (max-width: 500px) {
+  .add_folder_pop_up {
+    height: 25rem;
+    width: 35rem;
+    position: fixed;
+    /* margin-top: 5%;
+    margin-left: 50%; */
+  
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+  
+  .add_set_pop_up {
+    height: 35rem;
+    width: 35rem;
+    position: fixed;
+    /* margin-top: 5%;
+    margin-left: 50%; */
+  
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+  
+  .timer_pop_up {
+    height: 50rem;
+    width: 35rem;
+    position: fixed;
+    /* margin-top: 5%;
+    margin-left: 50%; */
+  
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+  
+  .custom_timer_pop_up {
+    height: 35rem;
+    width: 35rem;
+    position: fixed;
+    /* margin-top: 5%;
+    margin-left: 50%;
+    transform: translateX(-50%); */
+    z-index: 3; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+@media (max-width: 415px) {
+  .create_container{
+    height: 19%;
+  }
+
+  .user_one_item {
+    height: 5.5rem;
+    min-height: 5.5rem;
+    width: 35rem;
+  }
+
+  .user_one_item_folderIcon {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .user_one_item_name {
+    font-weight: 500;
+    font-size: 1.7rem;
+    padding-left: 1rem;
+  }
+  
+  .user_one_item_numChild {
+    font-size: 1.5rem;
+  }
+
+  .folders_container {
+    height: 38%;
+  }
+
+  .sets_container {
+    height: 38%;
+  }
+
+  .time_remaining_text {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .user_pauseplay_refresh_close_btn {
+    height: 2rem;
+    width: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+@media (max-width: 376px) {
+  .create_container{
+    height: 19%;
+  }
+
+  .user_one_item {
+    height: 5.5rem;
+    min-height: 5.5rem;
+    width: 31rem;
+  }
+
+  .user_one_item_folderIcon {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .user_one_item_name {
+    font-weight: 500;
+    font-size: 1.7rem;
+    padding-left: 1rem;
+  }
+  
+  .user_one_item_numChild {
+    font-size: 1.5rem;
+  }
+
+  .folders_container {
+    height: 38%;
+  }
+
+  .sets_container {
+    height: 38%;
+  }
+
+  .time_remaining_text {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+  }
+
+  .user_pauseplay_refresh_close_btn {
+    height: 1.7rem;
+    width: 1.7rem;
+    margin-bottom: 1rem;
+  }
+}
+
+
+@media (max-width: 360px) {
+  .create_container{
+    height: 20%;
+}
+  .plus_btn {
+    font-size: 3rem;
+    padding-bottom: 0.8rem;
+  }
+
+  .user_one_item {
+    height: 5.1rem;
+    min-height: 5.1rem;
+    width: 30rem;
+  }
+
+  .user_one_item_folderIcon {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+
+  .user_one_item_name {
+    font-weight: 500;
+    font-size: 1.4rem;
+    padding-left: 1rem;
+  }
+  
+  .user_one_item_numChild {
+    font-size: 1.2rem;
+  }
+
+  .folders_container {
+    height: 37%;
+  }
+
+  .sets_container {
+    height: 37%;
+  }
+
+  .time_remaining_text {
+    font-size: 1.6rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .user_pauseplay_refresh_close_btn {
+    height: 1.6rem;
+    width: 1.6rem;
+    margin-bottom: 0.7rem;
+  }
+}

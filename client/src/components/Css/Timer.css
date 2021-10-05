@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }
+
+/* ========================================================================== */
+/* Timer popup */
+/* ========================================================================== */
+
+.timer_container {
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+    background: var(--grey);
+}
+
+.timer_title_container {
+    height: 15%;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+
+    background: var(--darkgrey);
+}
+
+.timer_title {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+
+    color: white;
+    font-size: 3rem;
+    position: relative;
+}
+
+.timer_close_btn {
+    position: absolute;
+    right: 1rem;
+}
+
+.timer_close_btn:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.timer_subtitle_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.option_1_title, .option_2_title {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    
+    font-size:2.2rem;
+    color: white;
+}
+
+.options_container {
+    height: 85%;
+    width: 100%;
+    background: white;
+
+    flex-direction: column;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+
+    padding: 2rem;
+    border-radius: 0rem 0rem 1rem 1rem;
+}
+
+.option1_container, .option2_container, .option3_container {
+    height: 30%;
+    width: 100%;
+
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.option1_container:hover, .option2_container:hover, .option3_container:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
+.option1_study, .option1_break, .option2_study, .option2_break, .option3_study, .option3_break {
+    height: 100%;
+    width: 50%;
+}
+
+.option1_study, .option2_study, .option3_study {
+    background: lightblue;
+    position: relative;
+}
+
+.option1_break, .option2_break, .option3_break {
+    background: rgb(197, 160, 197);
+    position: relative;
+}
+.option_desc {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.option_plus_btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.option_img {
+    height: 10rem;
+	width: 10rem;
+    opacity: 0.2;
+    
+	position: absolute;
+	top: 50%;
+	left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
