@@ -13,7 +13,7 @@ const cardRouter = require("./routes/cards")
 const { validateToken } = require("./middlewares/authenticateUser")
 
 
-const port = 3000
+const port = process.env.PORT || 3000
 
 // =============================================================================
 // Db Initialization
