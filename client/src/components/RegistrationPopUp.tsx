@@ -41,7 +41,7 @@ export function RegistrationPopUp({ regPopUpOpen, setRegPopUpOpen }: Props) {
         const { name, email, password, passwordConfirmation } = submittedData
         const emailLowerCase = email.toLowerCase()
 
-        fetch("https://bubbletea-expense-tracker.herokuapp.com/api/v1/users/signup", {
+        fetch("https://studyweb-backend.herokuapp.com/api/v1/users/signup", {
             mode: 'cors',
             headers: {
                 'Content-type': 'application/json'
@@ -76,7 +76,7 @@ export function RegistrationPopUp({ regPopUpOpen, setRegPopUpOpen }: Props) {
         const { givenName, email, googleId } = result
         const emailLowerCase = email.toLowerCase()
         const name = givenName
-        fetch("https://bubbletea-expense-tracker.herokuapp.com/api/v1/users/google_auth", {
+        fetch("https://studyweb-backend.herokuapp.com/api/v1/users/google_auth", {
             mode: 'cors',
             headers: {
                 'Content-type': 'application/json'

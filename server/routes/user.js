@@ -92,7 +92,7 @@ router.get('/confirmation/:token', async (req, res) => {
 async function sendEmail(email, token) {
     try {
         console.log('our token is:', token)
-        const url = `https://bubbletea-expense-tracker.herokuapp.com/api/v1/users/confirmation/${token}`;
+        const url = `https://studyweb-backend.herokuapp.com/api/v1/users/confirmation/${token}`;
         await transporter.sendMail({
             from: transporter.options.auth.user,
             to: email,

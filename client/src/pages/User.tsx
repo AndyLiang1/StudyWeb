@@ -36,7 +36,7 @@ export function User(props: IAppProps) {
 
   const getFolderList = async () => {
     console.log('getting folders');
-    fetch(`https://bubbletea-expense-tracker.herokuapp.com/api/v1/folders/${authState.id}`, {
+    fetch(`https://studyweb-backend.herokuapp.com/api/v1/folders/${authState.id}`, {
       headers: {
         accessToken: localStorage.getItem("accessToken")!,
       },
@@ -54,7 +54,7 @@ export function User(props: IAppProps) {
   const getSetList = async () => {
     console.log('getting sets');
 
-    fetch(`https://bubbletea-expense-tracker.herokuapp.com/api/v1/sets/all/${authState.id}`, {
+    fetch(`https://studyweb-backend.herokuapp.com/api/v1/sets/all/${authState.id}`, {
       headers: {
         accessToken: localStorage.getItem("accessToken")!,
       },

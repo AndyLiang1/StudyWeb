@@ -20,11 +20,11 @@ export function DeletePopUp({ setDeletePopUpOpen, getFolderOrSetOrCardList, setI
     const deleteOnClick = () => {
         let url
         if (itemToDelete === 'folder') {
-            url = `https://bubbletea-expense-tracker.herokuapp.com/api/v1/folders/${folderId}`
+            url = `https://studyweb-backend.herokuapp.com/api/v1/folders/${folderId}`
         } else if (itemToDelete === 'set') {
-            url = `https://bubbletea-expense-tracker.herokuapp.com/api/v1/sets/${setId}/${folderId}`
+            url = `https://studyweb-backend.herokuapp.com/api/v1/sets/${setId}/${folderId}`
         } else {
-            url = `https://bubbletea-expense-tracker.herokuapp.com/api/v1/cards/${cardId}/${setId}`
+            url = `https://studyweb-backend.herokuapp.com/api/v1/cards/${cardId}/${setId}`
         }
 
         fetch(url, {

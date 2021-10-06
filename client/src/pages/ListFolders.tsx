@@ -31,7 +31,7 @@ export function ListFolders(props: IListFoldersProps) {
     let history = useHistory()
 
     const getFolderList = async () => {
-        fetch(`https://bubbletea-expense-tracker.herokuapp.com/api/v1/folders/${authState.id}`, {
+        fetch(`https://studyweb-backend.herokuapp.com/api/v1/folders/${authState.id}`, {
             headers: {
                 accessToken: localStorage.getItem("accessToken")!,
             },
@@ -44,7 +44,7 @@ export function ListFolders(props: IListFoldersProps) {
             .catch((error) => {
                 console.log(error);
             });
-        fetch(`https://bubbletea-expense-tracker.herokuapp.com/api/v1/sets/all/${authState.id}`, {
+        fetch(`https://studyweb-backend.herokuapp.com/api/v1/sets/all/${authState.id}`, {
             headers: {
                 accessToken: localStorage.getItem("accessToken")!,
             },

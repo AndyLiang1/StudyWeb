@@ -46,7 +46,7 @@ export function ListOneFolder(props: IListOneFolderProps) {
     }
 
     const getSetList = async () => {
-        fetch(`https://bubbletea-expense-tracker.herokuapp.com/api/v1/sets/all/${authState.id}`, {
+        fetch(`https://studyweb-backend.herokuapp.com/api/v1/sets/all/${authState.id}`, {
             headers: {
                 accessToken: localStorage.getItem("accessToken")!,
             },

@@ -40,7 +40,7 @@ export function AddPopUp({ setAddPopUpOpen, getFolderOrSetOrCardList, itemToAdd,
         console.log(`data`, submittedData)
         if (itemToAdd === 'folder') {
             console.log('detected properly');
-            url = `https://bubbletea-expense-tracker.herokuapp.com/api/v1/folders`
+            url = `https://studyweb-backend.herokuapp.com/api/v1/folders`
             body = JSON.stringify({
                 folderName: submittedData.name,
                 userId: authState.id
@@ -54,14 +54,14 @@ export function AddPopUp({ setAddPopUpOpen, getFolderOrSetOrCardList, itemToAdd,
             if (folderId) {
                 folderToAddToId = folderId
             }
-            url = `https://bubbletea-expense-tracker.herokuapp.com/api/v1/sets`
+            url = `https://studyweb-backend.herokuapp.com/api/v1/sets`
             body = JSON.stringify({
                 setName: submittedData.name,
                 folderId: folderToAddToId,
                 userId: authState.id,
             })
         } else {
-            url = `https://bubbletea-expense-tracker.herokuapp.com/api/v1/cards`
+            url = `https://studyweb-backend.herokuapp.com/api/v1/cards`
             body = JSON.stringify({
                 question: submittedData.question,
                 answer: submittedData.answer,

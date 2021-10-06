@@ -35,19 +35,19 @@ export function EditPopUp({ setEditPopUpOpen, getFolderOrSetOrCardList, setId, f
         let url;
         let body;
         if (itemToEdit === 'folder') {
-            url = `https://bubbletea-expense-tracker.herokuapp.com/api/v1/folders`
+            url = `https://studyweb-backend.herokuapp.com/api/v1/folders`
             body = JSON.stringify({
                 newFolderName: submittedData.newName,
                 id: folderId
             })
         } else if (itemToEdit === 'set') {
-            url = `https://bubbletea-expense-tracker.herokuapp.com/api/v1/sets`
+            url = `https://studyweb-backend.herokuapp.com/api/v1/sets`
             body = JSON.stringify({
                 newSetName: submittedData.newName,
                 id: setId
             })
         } else {
-            url = `https://bubbletea-expense-tracker.herokuapp.com/api/v1/cards`
+            url = `https://studyweb-backend.herokuapp.com/api/v1/cards`
             body = JSON.stringify({
                 newQuestion: submittedData.newQuestion,
                 newAnswer: submittedData.newAnswer,
