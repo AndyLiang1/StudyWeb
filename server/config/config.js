@@ -1,10 +1,10 @@
 
 module.exports = {
   "development": {
-    "username": process.env.DEV_DB_USERNAME,
-    "password": process.env.DEV_DB_PASSWORD,
-    "database": process.env.DEV_DB_DATABASE,
-    "host": process.env.DEV_DB_HOST,
+    "username": 'root',
+    "password": 'password',
+    "database": 'dev_studyweb',
+    "host": 'localhost',
     "dialect": 'mysql', // dialect has to be explictly supplied as of v4.0.0
   },
   "test": {

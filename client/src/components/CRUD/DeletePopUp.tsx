@@ -7,7 +7,7 @@ export interface IDeletePopUpProps {
     getFolderOrSetOrCardList: () => Promise<void>;
     setId?: number;
     folderId?: number;
-    cardId?:number;
+    cardId?: number;
     itemToDelete: string;
     displayedIndex?: number;
     setDisplayedIndex?: React.Dispatch<React.SetStateAction<number>>
@@ -20,11 +20,11 @@ export function DeletePopUp({ setDeletePopUpOpen, getFolderOrSetOrCardList, setI
     const deleteOnClick = () => {
         let url
         if (itemToDelete === 'folder') {
-            url = `http://localhost:3000/api/v1/folders/${folderId}`
-        } else if(itemToDelete === 'set'){
-            url = `http://localhost:3000/api/v1/sets/${setId}/${folderId}`
+            url = `https://bubbletea-expense-tracker.herokuapp.com/api/v1/folders/${folderId}`
+        } else if (itemToDelete === 'set') {
+            url = `https://bubbletea-expense-tracker.herokuapp.com/api/v1/sets/${setId}/${folderId}`
         } else {
-            url = `http://localhost:3000/api/v1/cards/${cardId}/${setId}`
+            url = `https://bubbletea-expense-tracker.herokuapp.com/api/v1/cards/${cardId}/${setId}`
         }
 
         fetch(url, {
@@ -38,9 +38,9 @@ export function DeletePopUp({ setDeletePopUpOpen, getFolderOrSetOrCardList, setI
                 console.log(data)
                 setDeletePopUpOpen(false)
                 getFolderOrSetOrCardList()
-                if(displayedIndex && setDisplayedIndex) {
-                    setDisplayedIndex(displayedIndex-1)
-                   
+                if (displayedIndex && setDisplayedIndex) {
+                    setDisplayedIndex(displayedIndex - 1)
+
                 }
             })
             .catch((error) => console.log(error));

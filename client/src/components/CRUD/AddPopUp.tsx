@@ -12,7 +12,7 @@ export interface IAppProps {
     itemToAdd: string;
     folderId?: number; // for adding a set to a known folder 
     setId?: number; // for adding a card to a set
-    getFolderOrSetOrCardList:any;
+    getFolderOrSetOrCardList: any;
     listFolders?: IFolder[];
     addingLoneSet?: boolean;
     addingCard?: boolean;
@@ -40,13 +40,13 @@ export function AddPopUp({ setAddPopUpOpen, getFolderOrSetOrCardList, itemToAdd,
         console.log(`data`, submittedData)
         if (itemToAdd === 'folder') {
             console.log('detected properly');
-            url = `http://localhost:3000/api/v1/folders`
+            url = `https://bubbletea-expense-tracker.herokuapp.com/api/v1/folders`
             body = JSON.stringify({
                 folderName: submittedData.name,
                 userId: authState.id
             })
         } else if (itemToAdd === 'set') {
-            let folderToAddToId:any = submittedData.folderToAddToId
+            let folderToAddToId: any = submittedData.folderToAddToId
             if (folderToAddToId === 0) {
                 folderToAddToId = null
             }
@@ -54,14 +54,14 @@ export function AddPopUp({ setAddPopUpOpen, getFolderOrSetOrCardList, itemToAdd,
             if (folderId) {
                 folderToAddToId = folderId
             }
-            url = `http://localhost:3000/api/v1/sets`
+            url = `https://bubbletea-expense-tracker.herokuapp.com/api/v1/sets`
             body = JSON.stringify({
                 setName: submittedData.name,
                 folderId: folderToAddToId,
                 userId: authState.id,
             })
         } else {
-            url = `http://localhost:3000/api/v1/cards`
+            url = `https://bubbletea-expense-tracker.herokuapp.com/api/v1/cards`
             body = JSON.stringify({
                 question: submittedData.question,
                 answer: submittedData.answer,

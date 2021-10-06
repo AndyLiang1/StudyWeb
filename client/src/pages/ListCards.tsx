@@ -46,7 +46,7 @@ export function ListCards(props: IListCardsProps) {
     const { timeString, timerStatus, pause, reset, setTimerStatus } = useContext(TimerContext)
 
     const getCardList = async () => {
-        fetch(`http://localhost:3000/api/v1/cards/${setId}`, {
+        fetch(`https://bubbletea-expense-tracker.herokuapp.com/api/v1/cards/${setId}`, {
             headers: {
                 accessToken: localStorage.getItem("accessToken")!,
             },

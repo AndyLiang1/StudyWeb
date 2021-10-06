@@ -33,7 +33,7 @@ export function LoginPopUp({ loginPopUpOpen, setLoginPopUpOpen }: Props) {
 
     const signIn = (submittedData: ILoginForm) => {
         const { email, password } = submittedData
-        fetch("http://localhost:3000/api/v1/users/signin", {
+        fetch("https://bubbletea-expense-tracker.herokuapp.com/api/v1/users/signin", {
             mode: 'cors',
             headers: {
                 'Content-type': 'application/json'
@@ -70,7 +70,7 @@ export function LoginPopUp({ loginPopUpOpen, setLoginPopUpOpen }: Props) {
         const { givenName, email, googleId } = result
         const emailLowerCase = email.toLowerCase()
         const name = givenName
-        fetch("http://localhost:3000/api/v1/users/google_auth", {
+        fetch("https://bubbletea-expense-tracker.herokuapp.com/api/v1/users/google_auth", {
             mode: 'cors',
             headers: {
                 'Content-type': 'application/json'
@@ -112,7 +112,7 @@ export function LoginPopUp({ loginPopUpOpen, setLoginPopUpOpen }: Props) {
     return (
         <div className="sign_in_page">
             <div className="image_side">
-            <div className="image_container">
+                <div className="image_container">
                     <img className="image_for_side" src={image_for_side}></img>
                 </div>
             </div>

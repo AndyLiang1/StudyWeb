@@ -9,8 +9,8 @@ const { sequelize } = require("../models/index");
 const transporter = nodemailer.createTransport({
     service: "hotmail",
     auth: {
-        user: "studyweb-auth@outlook.com",
-        pass: "passpass123!"
+        user: process.env.EMAIL_USERNAME,
+        pass: process.env.EMAIL_PASSWORD,
     }
 })
 
@@ -71,6 +71,7 @@ async function confirmUserAndDeleteUnconfirmedUsers(id, email) {
 
 router.get('/confirmation/:token', async (req, res) => {
     let { token } = req.params;
+    console.log('token at end of url', token)
 
     await jwt.verify(token, process.env.SECRET_EMAIL, async function (err, decoded) {
         if (err) {
@@ -90,7 +91,8 @@ router.get('/confirmation/:token', async (req, res) => {
 
 async function sendEmail(email, token) {
     try {
-        const url = `http://localhost:3000/api/v1/users/confirmation/${token}`;
+        console.log('our token is:', token)
+        const url = `https://bubbletea-expense-tracker.herokuapp.com/api/v1/users/confirmation/${token}`;
         await transporter.sendMail({
             from: transporter.options.auth.user,
             to: email,
@@ -98,6 +100,9 @@ async function sendEmail(email, token) {
             html: `Please click this to confirm email: <a href=${url}>${url}</a>`
         }, (info, error) => {
             if (error) console.log(error)
+            else {
+                console.log('info is', info)
+            }
         })
     } catch (error) {
         console.log('Error with sending email')
@@ -191,7 +196,7 @@ router.post("/signin", async (req, res) => {
             status: 'fail',
             error: "There are no users with this email who have confirmed their account yet!"
         });
-        
+
     } else {
         bcrypt
             .compare(password, users[0].password)

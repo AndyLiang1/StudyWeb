@@ -11,6 +11,8 @@ const folderRouter = require("./routes/folders")
 const setRouter = require("./routes/sets")
 const cardRouter = require("./routes/cards")
 const { validateToken } = require("./middlewares/authenticateUser")
+const dotenv = require('dotenv').config()
+
 
 
 const port = process.env.PORT || 3000
