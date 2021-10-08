@@ -43,7 +43,7 @@ async function addUser(name, email, hashedPass, confirmed) {
  * a user with that email yet.
  * @param {string} email the email that the database checks to see if it has it already
  */
-async function checkEmailExist(email) {
+async function checkEmailExistAndConfirmed(email) {
     const users = await sequelize.query("SELECT * FROM users WHERE (email = ? AND confirmed = 1)", {
         replacements: [email],
         type: QueryTypes.SELECT,
@@ -149,7 +149,7 @@ async function createConfirmToken(user) {
  */
 router.post("/signup", async (req, res) => {
     const { name, email, password } = req.body;
-    let users = await checkEmailExist(email);
+    let users = await checkEmailExistAndConfirmed(email);
     console.log(users)
     if (users.length != 0 && users[0].confirmed) {
         res.json({
@@ -190,7 +190,7 @@ router.post("/signup", async (req, res) => {
  */
 router.post("/signin", async (req, res) => {
     const { email, password } = req.body;
-    const users = await checkEmailExist(email);
+    const users = await checkEmailExistAndConfirmed(email);
     if (users.length === 0) {
         res.json({
             status: 'fail',
@@ -225,7 +225,7 @@ router.post("/signin", async (req, res) => {
 
 router.post("/google_auth", async (req, res) => {
     const { name, email, password } = req.body;
-    let users = await checkEmailExist(email);
+    let users = await checkEmailExistAndConfirmed(email);
     let accountUsed = users.length;
     let result;
 

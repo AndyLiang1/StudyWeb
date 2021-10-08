@@ -98,6 +98,7 @@ export function RegistrationPopUp({ regPopUpOpen, setRegPopUpOpen }: Props) {
                     localStorage.setItem("id", data.id)
                     localStorage.setItem("loggedIn", "true")
                     history.push("../user")
+                    console.log(data);
                 }
             })
             .catch((error) => {
@@ -166,7 +167,7 @@ export function RegistrationPopUp({ regPopUpOpen, setRegPopUpOpen }: Props) {
                             <button className="sign_up_button" type="submit">Sign up</button>
 
                             <GoogleLogin
-                                clientId="817144640879-lu721n4hbhffop5e60iqdk31f3f1e4d4.apps.googleusercontent.com"
+                                clientId="817144640879-j4kvlb1lbanii1eti1alerfj03evvd64.apps.googleusercontent.com"
                                 render={renderProps => (
                                     <button onClick={renderProps.onClick} className='g-sign-in-button'>
                                         <div className='content-wrapper'>
