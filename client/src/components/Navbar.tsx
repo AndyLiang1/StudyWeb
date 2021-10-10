@@ -17,7 +17,6 @@ export function NavigationBar({ loggedIn }: IAppProps) {
 
 
   const toggle = () => {
-    console.log('isactive', isActive)
     setIsActive(!isActive)
   }
 

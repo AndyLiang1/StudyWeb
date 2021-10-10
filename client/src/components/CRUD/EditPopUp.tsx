@@ -31,7 +31,6 @@ export function EditPopUp({ setEditPopUpOpen, getFolderOrSetOrCardList, setId, f
     })
 
     const submit = (submittedData: IEditForm) => {
-        console.log('submittedData', submittedData)
         let url;
         let body;
         if (itemToEdit === 'folder') {
@@ -64,7 +63,6 @@ export function EditPopUp({ setEditPopUpOpen, getFolderOrSetOrCardList, setId, f
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log(`data is: `, data)
                 setEditPopUpOpen(false)
                 getFolderOrSetOrCardList()
             })

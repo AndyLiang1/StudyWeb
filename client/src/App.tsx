@@ -82,7 +82,6 @@ const App: FC = () => {
           }, 200)
           clearInterval(intervalId)
         }
-        console.log(timeRemain);
         setTimeString(convertTimeToString(parseInt(timeRemain)))
         localStorage.setItem("studyTime", (parseInt(timeRemain) - 1).toString())
       }
@@ -99,7 +98,6 @@ const App: FC = () => {
             setTimeString('0:00')
           }, 200)
         }
-        console.log(timeRemain);
         setTimeString(convertTimeToString(parseInt(timeRemain)))
         localStorage.setItem("breakTime", (parseInt(timeRemain) - 1).toString())
       }

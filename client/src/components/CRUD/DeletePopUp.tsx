@@ -35,7 +35,6 @@ export function DeletePopUp({ setDeletePopUpOpen, getFolderOrSetOrCardList, setI
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log(data)
                 setDeletePopUpOpen(false)
                 getFolderOrSetOrCardList()
                 if (displayedIndex && setDisplayedIndex) {

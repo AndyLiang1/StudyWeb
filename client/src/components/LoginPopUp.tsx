@@ -50,7 +50,6 @@ export function LoginPopUp({ loginPopUpOpen, setLoginPopUpOpen }: Props) {
                     setBadLogin(true)
                     setLoginMsg(data.error)
                 } else {
-                    // console.log(`Success! Data is: `, data)
                     localStorage.setItem("accessToken", data.token)
                     localStorage.setItem("name", data.name)
                     localStorage.setItem("id", data.id)

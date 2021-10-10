@@ -15,7 +15,6 @@ router.get("/all/:userId", validateToken, async (req, res) => {
             type: QueryTypes.SELECT,
         })
         .then((data) => {
-            console.log(`sending back`, data)
             res.json({
                 status: 'success',
                 length: data.length,
@@ -49,7 +48,6 @@ router.get("/:folderId", validateToken, async (req, res) => {
 
 router.post("/", validateToken, async (req, res) => {
     const { setName, folderId, userId } = req.body
-    console.log(setName, folderId, userId)
     await sequelize
         .query("INSERT INTO sets (name, folderId, numCards, userId) VALUES (?, ?, ?, ?)", {
             replacements: [setName, folderId, 0, userId],
@@ -88,7 +86,6 @@ router.post("/", validateToken, async (req, res) => {
 
 router.put("/", validateToken, async (req, res) => {
     const { newSetName, id } = req.body
-    console.log('in backend')
     await sequelize
         .query("UPDATE sets SET name = ? WHERE id = ?", {
             replacements: [newSetName, id],

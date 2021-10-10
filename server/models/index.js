@@ -19,7 +19,6 @@ const db = {};
 //   });
 // }
 const sequelize = new Sequelize(process.env.DB_URI, {})
-console.log(process.env.DB_URI)
 fs
   .readdirSync(__dirname)
   .filter(file => {

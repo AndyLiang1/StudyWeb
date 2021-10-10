@@ -34,7 +34,6 @@ export function ListSets({ }: IListSetProps) {
     const history = useHistory()
 
     const getSetList = async () => {
-        console.log(authState.id)
         fetch(`https://studyweb-backend.herokuapp.com/api/v1/sets/all/${authState.id}`, {
             headers: {
                 accessToken: localStorage.getItem("accessToken")!,

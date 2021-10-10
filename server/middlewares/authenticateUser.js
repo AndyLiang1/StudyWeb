@@ -11,11 +11,9 @@ const validateToken = (req, res, next) => {
     const validToken = verify(accessToken, process.env.SECRET_JWT);
 
     if (validToken) {
-        console.log("here")
       return next();
     }
   } catch (error) {
-    console.log('bad')
     return res.json({ error: error })
   }
 };

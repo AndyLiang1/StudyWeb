@@ -7,7 +7,6 @@ const { sequelize } = require("../models/index")
 const { validateToken } = require("../middlewares/authenticateUser")
 
 router.get("/:userId", validateToken, async (req, res) => {
-    console.log('in here')
     const {userId} = req.params;
     await sequelize
         // Don't limit 10 because the function that fetches this end point
@@ -18,7 +17,6 @@ router.get("/:userId", validateToken, async (req, res) => {
 
         })
         .then((data) => {
-            console.log(data)
             res.json({
                 status: 'success',
                 length: data.length,

@@ -59,7 +59,6 @@ export function ListOneFolder(props: IListOneFolderProps) {
                         return oneSet
                     }
                 })
-                console.log(setsInFolder)
                 setSets(setsInFolder)
             })
             .catch((error) => {

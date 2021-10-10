@@ -37,9 +37,7 @@ export function AddPopUp({ setAddPopUpOpen, getFolderOrSetOrCardList, itemToAdd,
     const submit = (submittedData: IAddForm) => {
         let url
         let body
-        console.log(`data`, submittedData)
         if (itemToAdd === 'folder') {
-            console.log('detected properly');
             url = `https://studyweb-backend.herokuapp.com/api/v1/folders`
             body = JSON.stringify({
                 folderName: submittedData.name,

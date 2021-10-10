@@ -82,7 +82,6 @@ export function ListCards(props: IListCardsProps) {
 
 
     const changeIndex = (direction: string) => {
-        console.log(direction)
         if (displayedIndex == 1 && direction === 'neg') {
             return
         }

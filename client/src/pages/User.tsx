@@ -35,7 +35,6 @@ export function User(props: IAppProps) {
   let history = useHistory()
 
   const getFolderList = async () => {
-    console.log('getting folders');
     fetch(`https://studyweb-backend.herokuapp.com/api/v1/folders/${authState.id}`, {
       headers: {
         accessToken: localStorage.getItem("accessToken")!,
@@ -43,7 +42,6 @@ export function User(props: IAppProps) {
     })
       .then((response) => response.json())
       .then((responseJSON) => {
-        console.log(responseJSON.foldersList);
         setFolders(responseJSON.foldersList)
       })
       .catch((error) => {
@@ -52,8 +50,6 @@ export function User(props: IAppProps) {
   }
 
   const getSetList = async () => {
-    console.log('getting sets');
-
     fetch(`https://studyweb-backend.herokuapp.com/api/v1/sets/all/${authState.id}`, {
       headers: {
         accessToken: localStorage.getItem("accessToken")!,
@@ -61,7 +57,6 @@ export function User(props: IAppProps) {
     })
       .then((response) => response.json())
       .then((responseJSON) => {
-        console.log('sets list', responseJSON.foldersList)
         setSets(responseJSON.setsList)
       })
       .catch((error) => {
@@ -78,7 +73,6 @@ export function User(props: IAppProps) {
   }
 
   const openAddSetPopUp = () => {
-    console.log('Opening set.', addSetPopUpOpen);
     setAddSetPopUpOpen(true)
     if (addFolderPopUpOpen || timerPopUpOpen) {
       setAddFolderPopUpOpen(false)
@@ -87,7 +81,6 @@ export function User(props: IAppProps) {
   }
 
   const openTimerPopUp = () => {
-    console.log('Opening timer.', timerPopUpOpen);
     setTimerPopUpOpen(true)
     if (addFolderPopUpOpen || addSetPopUpOpen) {
       setAddFolderPopUpOpen(false)

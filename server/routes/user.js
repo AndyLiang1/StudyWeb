@@ -71,7 +71,6 @@ async function confirmUserAndDeleteUnconfirmedUsers(id, email) {
 
 router.get('/confirmation/:token', async (req, res) => {
     let { token } = req.params;
-    console.log('token at end of url', token)
 
     await jwt.verify(token, process.env.SECRET_EMAIL, async function (err, decoded) {
         if (err) {
@@ -91,7 +90,6 @@ router.get('/confirmation/:token', async (req, res) => {
 
 async function sendEmail(email, token) {
     try {
-        console.log('our token is:', token)
         const url = `https://studyweb-backend.herokuapp.com/api/v1/users/confirmation/${token}`;
         await transporter.sendMail({
             from: transporter.options.auth.user,
@@ -150,7 +148,6 @@ async function createConfirmToken(user) {
 router.post("/signup", async (req, res) => {
     const { name, email, password } = req.body;
     let users = await checkEmailExistAndConfirmed(email);
-    console.log(users)
     if (users.length != 0 && users[0].confirmed) {
         res.json({
             status: 'fail',
