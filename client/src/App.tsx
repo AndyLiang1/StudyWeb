@@ -50,10 +50,10 @@ const App: FC = () => {
       setMultOptionErr(true)
     }
     setTimerStatus("study")
-    localStorage.setItem("studyTimeOrig", studyDur.toString())
-    localStorage.setItem("breakTimeOrig", breakDur.toString())
-    localStorage.setItem("studyTime", studyDur.toString())
-    localStorage.setItem("breakTime", breakDur.toString())
+    localStorage.setItem("studyTimeOrig", (studyDur * 60).toString())
+    localStorage.setItem("breakTimeOrig", (breakDur * 60).toString())
+    localStorage.setItem("studyTime", (studyDur * 60).toString())
+    localStorage.setItem("breakTime", (breakDur * 60).toString())
   }
 
   const countDown = () => {
