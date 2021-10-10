@@ -11,9 +11,15 @@ Hello! Welcome to the codebase for StudyWeb. The creation of this web applicatio
 # Demo: 
 
 Basic functionality:
-https://user-images.githubusercontent.com/69891690/136678843-0729a7fd-79dd-41fe-9796-f503bb040567.mp4
+
+
+https://user-images.githubusercontent.com/69891690/136678851-69ac1900-e11c-47d2-bfa4-f5074b8885b3.mp4
+
+
 Responsiveness:
-https://user-images.githubusercontent.com/69891690/136678837-cbef7cdb-76f6-41db-8724-bb4d04d174bb.mp4
+
+
+https://user-images.githubusercontent.com/69891690/136678854-30f94ba6-aa1c-4cc9-bee0-30e4bbfa09d2.mp4
 
 
 # Features:
