@@ -10,7 +10,7 @@ Hello! Welcome to the codebase for StudyWeb. The creation of this web applicatio
 
 # Read this before going to Demo
 
-The timer in the demo uses seconds instead of minutes so I can more easily show the timer's ability to change states from study mode, to break mode. Also, for the two factor authentication sign up system, if you do not receive an email after signing up manually, it may be because outlook banned my account for "suspicious activites". It is NOT my code not working haha.
+The timer in the demo uses seconds instead of minutes so I can more easily show the timer's ability to change states from study mode, to break mode. Also, for the two factor authentication sign up system, if you do not receive an email after signing up manually, it may be because outlook banned my account for "suspicious activites". It is NOT my code not working haha. If you don't want to create an account and just want to play around, feel free to use Username: greyuserr1@gmail.com Password: passpass1.
 
 # Demo: 
 
