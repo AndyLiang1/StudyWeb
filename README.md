@@ -6,7 +6,11 @@ https://studyweb-al.netlify.app/
 
 # Intro from creator: 
 
-Hello! Welcome to the codebase for StudyWeb. The creation of this web application was inspired by the amount of cuecard creating web apps that did not have a timer system implemented. Hence, I decided to make my own.
+Hello! Welcome to the codebase for StudyWeb. The creation of this web application was inspired by the amount of cuecard creating web apps that did not have a timer system implemented. Hence, I decided to make my own!
+
+# Read this before going to Demo
+
+The timer in the demo uses seconds instead of minutes so I can more easily show the timer's ability to change states from study mode, to break mode. Also, for the two factor authentication sign up system, if you do not receive an email after signing up manually, it may be because outlook banned my account for "suspicious activites". It is NOT my code not working haha.
 
 # Demo: 
 
