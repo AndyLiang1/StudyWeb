@@ -39,5 +39,5 @@ https://user-images.githubusercontent.com/69891690/136678854-30f94ba6-aa1c-4cc9-
   7) Select preset or custom made timers. Timers have 2 components, a study duration and a break duration. This allows users to follow efficient study techniques such as Pomodoro
   8) Ability to pause, refresh, or delete the timer 
   
-  ## Resposiveness
+  ## Responsiveness
   9) Web application can handle a variety of screen sizes. Navbar collapses into a "hamburger" menu when the screen width becomes small (for example: phones)
